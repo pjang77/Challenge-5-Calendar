@@ -29,7 +29,8 @@ for (let i = 0; i < 9; i++) {
     timeState = "past";
   }
 
-  timeList.innerHTML += `
+  const div = document.createElement("div");
+  div.innerHTML = `
     <div class="row time-block ${timeState}">
       <div class="col-2 col-md-1 hour text-center py-3">
         ${time.format("hA")}
@@ -40,8 +41,20 @@ for (let i = 0; i < 9; i++) {
       </button>
     </div>
   `;
+
+  const button = div.querySelector("button");
+  const textArea = div.querySelector("textarea");
+
+  textArea.value = localStorage.getItem(time.format("hA"));
+
+  button.addEventListener("click", () => {
+    localStorage.setItem(time.format("hA"), textArea.value);
+  });
+
+  timeList.append(div);
 }
 
+//
 // timeList.innerHTML += `
 //   <div id="hour-10" class="row time-block present">
 //     <div class="col-2 col-md-1 hour text-center py-3">10AM</div>
