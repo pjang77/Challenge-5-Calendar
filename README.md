@@ -16,7 +16,6 @@ THEN the text for that event is saved in local storage
 WHEN I refresh the page
 THEN the saved events persist
 
-```
-
-
-```
+page link: https://pjang77.github.io/Challenge-5-Calendar/
+github link: https://github.com/pjang77/Challenge-5-Calendar
+![screenshot of webpage](./assets/WorkDay%20screenshot.png)
